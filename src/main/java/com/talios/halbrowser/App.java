@@ -284,6 +284,8 @@ public class App {
 
   private static AsyncHttpClient httpClient = new AsyncHttpClient();
 
-  private static RepresentationFactory resourceFactory = new StandardRepresentationFactory();
+  private static RepresentationFactory resourceFactory = new StandardRepresentationFactory()
+      .withFlag(RepresentationFactory.PRETTY_PRINT)
+      .withFlag(RepresentationFactory.STRIP_NULLS);
 
 }
