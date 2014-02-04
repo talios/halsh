@@ -192,7 +192,7 @@ public class App {
 
   private static void postHref(String href, Iterable<String> params) throws IOException, ExecutionException, InterruptedException {
     if (Iterables.size(params) % 2 == 0) {
-      AsyncHttpClient.BoundRequestBuilder post = httpClient.preparePost(href);
+      AsyncHttpClient.BoundRequestBuilder post = httpClient.preparePost(mkCanonicalHref(href));
       Iterator<String> iterator = params.iterator();
       while (iterator.hasNext()) {
         String key = iterator.next();
